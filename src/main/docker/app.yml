@@ -1,0 +1,8 @@
+version: '2'
+services:
+  journalapp-app:
+    build: ../../..
+    container_name: journalapp-app
+    environment:
+    ports:
+      - 8081:8081
