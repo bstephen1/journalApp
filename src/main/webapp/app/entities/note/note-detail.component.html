@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="note">
+            <h2><span>Note</span> {{ note.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Title</span></dt>
+                <dd>
+                    <span>{{ note.title }}</span>
+                </dd>
+                <dt><span>Content</span></dt>
+                <dd>
+                    <span>{{ note.content }}</span>
+                </dd>
+                <dt><span>Creation Date</span></dt>
+                <dd>
+                    <span>{{ note.creationDate }}</span>
+                </dd>
+                <dt><span>Journal</span></dt>
+                <dd>
+                    <div *ngIf="note.journal">
+                        <a [routerLink]="['/journal', note.journal?.id, 'view']">{{ note.journal?.title }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/note', note.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

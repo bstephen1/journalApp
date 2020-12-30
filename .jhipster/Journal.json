@@ -1,0 +1,31 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "note",
+            "otherEntityName": "note",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "journal"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "title",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "unique"
+            ]
+        }
+    ],
+    "changelogDate": "20201230150301",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "journal",
+    "databaseType": "sql",
+    "readOnly": false,
+    "jpaMetamodelFiltering": false,
+    "pagination": "infinite-scroll"
+}
