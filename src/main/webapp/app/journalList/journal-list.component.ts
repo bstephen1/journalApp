@@ -19,7 +19,6 @@ export class JournalListComponent implements OnInit {
     this.route.queryParams.pipe(flatMap(params => this.journalListService.getAll())).subscribe(
       data => {
         this.journals = data;
-        console.log(data);
         this.success = true;
       },
       () => (this.error = true)

@@ -1,7 +1,7 @@
 <div>
 	<dl class="row-md jh-entity-details" *ngIf="success">
 		<dt><span>Notes</span></dt>
-		<dd *ngFor="let note of notes">
+		<dd *ngFor="let note of filterByJournal(notes)">
 			<a [routerLink]="['/note', note.id, 'view']">{{note.creationDate}} {{note.title}}</a>
 			<br>
 		</dd>

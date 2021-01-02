@@ -13,7 +13,7 @@
                     <span>{{ journal.title }}</span>
                 </dd>
             </dl>
-            <jhi-note-list></jhi-note-list>
+            <jhi-note-list [journalFilter]="journal.title"></jhi-note-list>
 
             <button type="submit"
                     (click)="previousState()"
