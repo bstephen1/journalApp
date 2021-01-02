@@ -32,6 +32,10 @@ export class ProfileService {
           );
           if (ribbonProfiles.length > 0) {
             profileInfo.ribbonEnv = ribbonProfiles[0];
+            //correction for bad initial name that is now buried somewhere
+            if (ribbonProfiles[0] === 'no') {
+              profileInfo.ribbonEnv = 'Development';
+            }
           }
         }
         return profileInfo;
