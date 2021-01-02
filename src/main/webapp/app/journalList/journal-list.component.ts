@@ -6,8 +6,7 @@ import { JournalListService } from './journal-list.service';
 
 @Component({
   selector: 'jhi-journal-list',
-  templateUrl: './journal-list.component.html',
-  providers: []
+  templateUrl: './journal-list.component.html'
 })
 export class JournalListComponent implements OnInit {
   error = false;
@@ -17,7 +16,6 @@ export class JournalListComponent implements OnInit {
   constructor(private journalListService: JournalListService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    //fetch journal data from backend
     this.route.queryParams.pipe(flatMap(params => this.journalListService.getAll())).subscribe(
       data => {
         this.journals = data;

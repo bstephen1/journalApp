@@ -1,0 +1,13 @@
+<div>
+	<dl class="row-md jh-entity-details" *ngIf="success">
+		<dt><span>Notes</span></dt>
+		<dd *ngFor="let note of notes">
+			<a [routerLink]="['/note', note.id, 'view']">{{note.creationDate}} {{note.title}}</a>
+			<br>
+		</dd>
+		<dd *ngIf="!notes.length">You don't have any notes yet!</dd>
+	</dl>
+	<div class="alert alert-error" *ngIf="error">
+		<p>Error retrieving notes</p>
+	</div>
+</div>
